@@ -1,0 +1,14 @@
+---
+- name: Enter text to MOTD file
+  become: true
+  hosts: all
+
+  tasks: 
+
+  - name: Enter content to MOTD 
+    template:
+      src: templates/motd
+      dest: /etc/motd
+      owner: root
+      group: root
+      mode: 0644

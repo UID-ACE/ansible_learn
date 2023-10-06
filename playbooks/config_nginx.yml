@@ -1,0 +1,14 @@
+---
+- name: Nginx setup 
+  hosts: all
+  become: yes
+  tasks: 
+     - name: ensure nginx is at latest version
+       yum: 
+          name: nginx
+          state: latest
+     - name: start nginx 
+       service: 
+          name: nginx
+          state: started 
+          enabled: yes

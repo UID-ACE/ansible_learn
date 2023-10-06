@@ -1,0 +1,8 @@
+---
+- name: Command module demo
+  become: yes
+  hosts: all
+  tasks:
+
+  - name: Run custom.sh
+    command: "/root/custom.sh"

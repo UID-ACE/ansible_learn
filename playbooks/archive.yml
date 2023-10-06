@@ -1,0 +1,11 @@
+---
+- name: Unarchive module demo
+  become: yes
+  hosts: all
+  tasks:
+
+  - name: Extract contents of test.tar.gz
+    unarchive: 
+      src: /home/pikachu/test.tar.gz
+      dest: /tmp
+      remote_src: yes

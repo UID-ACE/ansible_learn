@@ -1,0 +1,13 @@
+---
+- name: File module demo
+  hosts: all
+  become: yes
+  tasks:
+
+  - name: Ensure directory /home/pikachu/test exits
+    file:
+      path: /home/pikachu/test
+      state: directory
+      owner: root
+      group: root
+      mode: 0770

@@ -1,0 +1,11 @@
+---
+-  name: lineinfile module demo
+   become: yes
+   hosts: all
+   tasks: 
+
+   - name: Ensure 8.8.8.8 in DNS config file
+     lineinfile:
+       path: /etc/resolv.conf
+       line: 8.8.8.8 google.com
+       state: present

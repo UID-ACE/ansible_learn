@@ -1,0 +1,14 @@
+---
+- name: Name of the play
+  hosts: Machines to be targeted by this play
+  become: Needed for elevated privileged tasks
+  tasks:
+
+  - name: Name of the task to be performed
+    module:
+      parameter
+      more paramters if needed
+  - name: Name of additonal tasks
+    module:
+      parameter
+      more paramters if needed   

@@ -1,0 +1,11 @@
+---
+- name: Service module demo
+  hosts: all
+  become: yes
+  tasks:
+
+  - name: Ensure web server is start and enabled
+    service:
+      name: nginx
+      state: started
+      enabled: yes

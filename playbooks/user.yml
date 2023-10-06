@@ -1,0 +1,20 @@
+---
+- name: Create a new user
+  hosts: all
+  become: yes
+  tasks:
+  - name: Ensure Group Pokemon exists
+    ansible.builtin.group:
+      name: pokemon
+      state: present
+    
+
+  - name: Create User Pikachu
+    user:  
+      name: pikachu
+      group: pokemon
+      groups: wheel
+      uid: 2004
+      password: "{{ 'ash' | password_hash('sha512') }}"
+      state: present
+      update_password: on_create

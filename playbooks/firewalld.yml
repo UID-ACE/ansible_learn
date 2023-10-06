@@ -1,0 +1,12 @@
+---
+- name: Firewalld module demo
+  become: yes
+  hosts: all
+  tasks:
+
+  - name: Ensure port 80 (http) is open
+    firewalld:
+      port: 80/tcp
+      state: enabled
+      permanent: yes
+      immediate: yes

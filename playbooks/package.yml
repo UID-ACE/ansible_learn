@@ -1,0 +1,12 @@
+---
+- name: Install package demo
+  hosts: all
+  become: yes
+  tasks: 
+
+  - name: Ensure Nginx package is installed
+    package:
+      name: nginx
+      state: present
+
+### For more flexibility use the appropriate packet manager for your system. For example: RHEL distros: dnf/yum or Ubuntu: apt  ###
